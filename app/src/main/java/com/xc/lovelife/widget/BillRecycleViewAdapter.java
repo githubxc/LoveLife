@@ -1,15 +1,19 @@
 package com.xc.lovelife.widget;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.StrictMode;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.xc.lovelife.R;
 import com.xc.lovelife.apimanager.Api;
 import com.xc.lovelife.bean.Bill;
@@ -40,8 +44,10 @@ public class BillRecycleViewAdapter extends RecyclerView.Adapter<BillRecycleView
 
     private List<Bill> mDatas;
     private Bitmap bitmap;
+    private Context context;
 
-    public BillRecycleViewAdapter(ArrayList<Bill> data) {
+    public BillRecycleViewAdapter(Context context, ArrayList<Bill> data) {
+        this.context = context;
         this.mDatas = data;
     }
 
@@ -72,14 +78,19 @@ public class BillRecycleViewAdapter extends RecyclerView.Adapter<BillRecycleView
     public void onBindViewHolder(MyViewHolder holder, int position)
     {
 
-        holder.billCircleImageView.setImageBitmap(getPicture(mDatas.get(position).getPic().getFileUrl()));
+        Glide.with(context).load(mDatas.get(position).getPic().getFileUrl()).into(holder.billCircleImageView);
+        //holder.billCircleImageView.setImageBitmap(getPicture(mDatas.get(position).getPic().getFileUrl()));
         holder.note.setText(mDatas.get(position).getNote());
         holder.data.setText(mDatas.get(position).getDate());
 
-        if ((mDatas.get(position).getType()).equals("收入"))
+        if ((mDatas.get(position).getInOrout()).equals("收入")) {
             holder.amount.setText(" + " + mDatas.get(position).getAmount().toString());
-        else
+            holder.amount.setTextColor(context.getResources().getColor(R.color.red_dark));
+        }
+        else {
             holder.amount.setText(" - " + mDatas.get(position).getAmount().toString());
+            holder.amount.setTextColor(context.getResources().getColor(R.color.colorAccent));
+        }
     }
 
     @Override

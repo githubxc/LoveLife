@@ -17,6 +17,7 @@ import android.view.View;
 
 import com.google.gson.Gson;
 import com.xc.lovelife.R;
+import com.xc.lovelife.apimanager.Api;
 import com.xc.lovelife.base.BaseFragment;
 import com.xc.lovelife.bean.Bill;
 import com.xc.lovelife.widget.BillRecycleViewAdapter;
@@ -54,12 +55,14 @@ public class BillFragment extends BaseFragment {
     private ArrayList<Bill> bill;
     private ArrayList<Bill> billData;
     private BillRecycleViewAdapter mAdapter;
+    private Context context;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         billData = new ArrayList<>();
+        context = getContext();
 
         initBillData();
 
@@ -67,7 +70,7 @@ public class BillFragment extends BaseFragment {
         setBaseLeftIcon(R.mipmap.add, "addRecord", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toast("left");
+                jumpTo(AddBillActivity.class);
             }
         });
         setBaseRightIcon1(R.mipmap.diagram, "扇形图", new View.OnClickListener() {
@@ -106,15 +109,15 @@ public class BillFragment extends BaseFragment {
         bill = new ArrayList<>();
 
         BmobQuery<Bill> billBmobQuery = new BmobQuery<>();
-        billBmobQuery.addWhereEqualTo("userName", "xuchao2");
+        billBmobQuery.addWhereEqualTo("userName", Api.username);
         billBmobQuery.findObjects(new FindListener<Bill>() {
             @Override
             public void done(List<Bill> list, BmobException e) {
                 if (e == null) {
                     for (Bill billQuery : list) {
-                        toast("查询成功，返回" + list.size() + "条数据");
+                        //toast("查询成功，返回" + list.size() + "条数据");
                         bill.add(billQuery);
-                        mRecyclerView.setAdapter(new BillRecycleViewAdapter(bill));
+                        mRecyclerView.setAdapter(new BillRecycleViewAdapter(context, bill));
                         //bill.add(new Bill(billQuery.getUserName(), billQuery.getPic(), billQuery.getType(), billQuery.getData(), billQuery.getNote(), billQuery.getAmount()));
                     }
 

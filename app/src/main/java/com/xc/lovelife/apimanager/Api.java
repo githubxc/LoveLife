@@ -7,4 +7,5 @@ package com.xc.lovelife.apimanager;
 public class Api {
 
     public static String url;
+    public static String username = "xuchao";
 }

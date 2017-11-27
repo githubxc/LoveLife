@@ -19,6 +19,7 @@ public class Bill extends BmobObject {
     private String date;
     private String note;
     private Integer amount;
+    private String inOrout;
 
     public Bill(){
 
@@ -64,7 +65,7 @@ public class Bill extends BmobObject {
         return date;
     }
 
-    public void setData(String date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -82,5 +83,13 @@ public class Bill extends BmobObject {
 
     public void setAmount(Integer amount) {
         this.amount = amount;
+    }
+
+    public String getInOrout() {
+        return inOrout;
+    }
+
+    public void setInOrout(String inOrout) {
+        this.inOrout = inOrout;
     }
 }

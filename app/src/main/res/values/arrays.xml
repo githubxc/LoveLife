@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnertype">
+        <item>购物</item>
+        <item>吃饭</item>
+        <item>看电影</item>
+        <item>约会</item>
+        <item>聚餐</item>
+        <item>兼职</item>
+        <item>工资</item>
+        <item>奖金</item>
+        <item>其他</item>
+    </string-array>
+</resources>
