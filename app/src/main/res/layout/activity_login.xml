@@ -21,15 +21,13 @@
 
 
             <EditText
-                android:id="@+id/et_phone"
+                android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
                 android:background="@null"
-                android:digits="0123456789"
                 android:gravity="center_vertical"
-                android:hint="请输入手机号"
-                android:inputType="number"
+                android:hint="请输入用户名"
                 android:maxLength="11"
                 android:maxLines="1"
                 android:paddingLeft="5dp"
@@ -107,7 +105,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="60dp"
             android:background="@drawable/bt_shape"
             android:text="登录"
             android:textColor="@color/white"
@@ -142,16 +140,16 @@
 
             <ImageView
                 android:id="@+id/iv_qq"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 android:src="@mipmap/qq"/>
 
             <ImageView
                 android:id="@+id/iv_sina"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
@@ -159,8 +157,8 @@
 
             <ImageView
                 android:id="@+id/iv_wechat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"

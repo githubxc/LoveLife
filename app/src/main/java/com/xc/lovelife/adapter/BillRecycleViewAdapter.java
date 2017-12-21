@@ -1,13 +1,10 @@
-package com.xc.lovelife.widget;
+package com.xc.lovelife.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.StrictMode;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +12,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.xc.lovelife.R;
-import com.xc.lovelife.apimanager.Api;
 import com.xc.lovelife.bean.Bill;
-import com.xc.lovelife.utils.RetrofitUtil;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -27,10 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
-import okhttp3.ResponseBody;
 
 
 /**

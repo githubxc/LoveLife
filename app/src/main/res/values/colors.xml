@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#1C86EE</color>
-    <color name="colorPrimaryDark">#1E90FF</color>
+    <color name="colorPrimaryDark">#1db4f3</color>
     <color name="colorAccent">#00B2EE</color>
+
+    <color name="blue">#1db4f3</color>
 
     <color name="white">#FFFFFF</color>
 
     <color name="red_dark">#ffb52121</color>
     <color name="red_light">#ffcd2222</color>
+    <color name="activity_bg">@color/white</color>
+    <color name="text_hint">#a19f9e</color>
+
 </resources>

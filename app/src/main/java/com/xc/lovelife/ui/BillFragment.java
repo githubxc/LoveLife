@@ -1,46 +1,26 @@
 package com.xc.lovelife.ui;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
-import com.google.gson.Gson;
 import com.xc.lovelife.R;
 import com.xc.lovelife.apimanager.Api;
 import com.xc.lovelife.base.BaseFragment;
 import com.xc.lovelife.bean.Bill;
-import com.xc.lovelife.widget.BillRecycleViewAdapter;
+import com.xc.lovelife.adapter.BillRecycleViewAdapter;
 import com.xc.lovelife.widget.MyDividerItemDecoration;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.datatype.BmobDate;
-import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
-import cn.bmob.v3.listener.SaveListener;
-import cn.bmob.v3.listener.UploadFileListener;
 
 
 /**

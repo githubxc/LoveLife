@@ -173,34 +173,43 @@ public class AddBillActivity extends BaseActivity {
                 type = spinner[pos];
 
                 int picId = R.mipmap.ic_launcher;
+                String picname = "pic.png";
                 switch (type){
                     case "购物":
                         picId = R.mipmap.shopping;
+                        picname = "shopping.png";
                         break;
                     case "吃饭":
                         picId = R.mipmap.meal;
+                        picname = "meal.png";
                         break;
                     case "看电影":
                         picId = R.mipmap.coupe;
+                        picname = "coupe.png";
                         break;
                     case "约会":
                         picId = R.mipmap.coupe;
+                        picname = "coupe.png";
                         break;
                     case "聚餐":
                         picId = R.mipmap.jucan;
+                        picname = "jucan.png";
                         break;
                     case "兼职":
                         picId = R.mipmap.parttimejob;
+                        picname = "parttimejob.png";
                         break;
                     case "工资":
                         picId = R.mipmap.salary;
+                        picname = "salary.png";
                         break;
                     case "奖金":
                         picId = R.mipmap.reward;
+                        picname = "reward.png";
                         break;
                 }
                 bitmap = BitmapFactory.decodeResource(getResources(), picId);
-                saveBitmap(bitmap, "pic.png");
+                saveBitmap(bitmap, picname);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -276,6 +285,7 @@ public class AddBillActivity extends BaseActivity {
             appDir.mkdir();
         }
         myPicFile = new File(appDir, fileName);
+
         try {
             FileOutputStream fos = new FileOutputStream(myPicFile);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);

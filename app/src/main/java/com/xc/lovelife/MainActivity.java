@@ -1,6 +1,7 @@
 package com.xc.lovelife;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.Color;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.gyf.barlibrary.ImmersionBar;
 import com.hjm.bottomtabbar.BottomTabBar;
 import com.xc.lovelife.base.BaseActivity;
 import com.xc.lovelife.ui.BillFragment;
@@ -34,9 +36,16 @@ public class MainActivity extends BaseActivity {
     private Context context;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //设置状态栏
+        ImmersionBar.with(this)
+                .statusBarColor(R.color.colorAccent)
+                .fitsSystemWindows(true)
+                .init();
 
         context = getApplicationContext();
 
@@ -84,7 +93,8 @@ public class MainActivity extends BaseActivity {
                         Manifest.permission.ACCESS_NETWORK_STATE,
                         Manifest.permission.WAKE_LOCK,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_PHONE_STATE)
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.CAMERA)
                 .rationale(rationaleListener)
                 .callback(listener)
                 .start();

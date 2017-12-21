@@ -37,7 +37,6 @@
             android:contentDescription="@string/second_function_key"
             android:padding="@dimen/size_8"
             android:src="@mipmap/add"
-            android:tint="@android:color/white"
             android:visibility="gone" />
 
         <ImageView
@@ -48,7 +47,6 @@
             android:contentDescription="@string/first_function_key"
             android:padding="@dimen/size_8"
             android:src="@mipmap/more"
-            android:tint="@android:color/white"
             android:visibility="gone" />
 
         <TextView
