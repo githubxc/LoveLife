@@ -40,6 +40,8 @@
         <activity android:name=".ui.AddBillActivity"></activity>
 
         <activity android:name=".ui.TrendsActivity"></activity>
+
+        <activity android:name=".ui.ImagePagerActivity"></activity>
         
         <!--suppress AndroidDomInspection -->
         <service android:name=".event.NetBroadcastReceiver">
